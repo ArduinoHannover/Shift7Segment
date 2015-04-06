@@ -16,7 +16,7 @@ void Shift7Segment::show() {
 }
 void Shift7Segment::shift(uint8_t bits, boolean order) {
 	for (int i = order?0:7; order?(i < 8):(i >= 0); order?i++:i--) {
-		digitalWrite(dataPin, (bits >> *segmentPins[i]) & 1 == commonType);
+		digitalWrite(dataPin, ((bits >> *segmentPins[i]) & 1) == commonType);
 		digitalWrite(clockPin, HIGH);
 		digitalWrite(clockPin, LOW);
 	}
