@@ -18,8 +18,9 @@ Q7 -> G    DDD•
 ```
 The default pins are data on D6, clock (SHCP) on D7 and latch (STCP) on D8. You can easily change these settings, by feeding the constructor with as many parameters as you wish to change:
 ```cpp
-Shift7Segment mySegment = Shift7Segment(Q0, ..., Q7, dataPin, clockPin, latchPin);
+Shift7Segment mySegment = Shift7Segment(commonPinType, Q0, ..., Q7, dataPin, clockPin, latchPin);
 ```
+commonPinType can be either `COMMON_ANODE` (default) or `COMMON_CATHODE`.
 After creating a `Shift7Segment` you can access the following functions:
 
 `mySegment.shift(uint8_t bits, [boolean order = MSBFIRST])` shift the provided bits out in the order {A, B, ... G, Dot}. Defaults to MSBFirst, but can be inverted on the fly with setting order to `LSBFIRST`.
