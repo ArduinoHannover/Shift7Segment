@@ -1,6 +1,6 @@
 #include "Shift7Segment.h"
 
-Shift7Segment::Shift7Segment(uint8_t q0, uint8_t q1, uint8_t q2, uint8_t q3, uint8_t q4, uint8_t q5, uint8_t q6, uint8_t q7, uint8_t data, uint8_t clock, uint8_t latch) : Q0(q0), Q1(q1), Q2(q2), Q3(q3), Q4(q4), Q5(q5), Q6(q6), Q7(q7), dataPin(data), clockPin(clock), latchPin(latch) {
+Shift7Segment::Shift7Segment(boolean type, uint8_t q0, uint8_t q1, uint8_t q2, uint8_t q3, uint8_t q4, uint8_t q5, uint8_t q6, uint8_t q7, uint8_t data, uint8_t clock, uint8_t latch) : commonType(type), Q0(q0), Q1(q1), Q2(q2), Q3(q3), Q4(q4), Q5(q5), Q6(q6), Q7(q7), dataPin(data), clockPin(clock), latchPin(latch) {
 	pinMode(dataPin, OUTPUT);
 	pinMode(clockPin, OUTPUT);
 	pinMode(latchPin, OUTPUT);
@@ -16,7 +16,7 @@ void Shift7Segment::show() {
 }
 void Shift7Segment::shift(uint8_t bits, boolean order) {
 	for (int i = order?0:7; order?(i < 8):(i >= 0); order?i++:i--) {
-		digitalWrite(dataPin, (bits >> *segmentPins[i]) & 1);
+		digitalWrite(dataPin, (bits >> *segmentPins[i]) & 1 == commonType);
 		digitalWrite(clockPin, HIGH);
 		digitalWrite(clockPin, LOW);
 	}
