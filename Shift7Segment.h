@@ -34,6 +34,8 @@ class Shift7Segment {
 		dataPin,
 		clockPin,
 		latchPin;
+	boolean
+		commonType;
 	
 	public:
 		Shift7Segment(boolean type = COMMON_ANODE, uint8_t q0 = DOT, uint8_t q1 = SegmentC, uint8_t q2 = SegmentD, uint8_t q3 = SegmentE, uint8_t q4 = SegmentB, uint8_t q5 = SegmentA, uint8_t q6 = SegmentF, uint8_t q7 = DOT, uint8_t data = 6, uint8_t clock = 7, uint8_t latch = 8);
