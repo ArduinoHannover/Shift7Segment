@@ -36,7 +36,8 @@ Characters are limited:
   * `W` is an uppercase `U`, while `U` maps to lowercase `u`
   * `°` is accessible via `~` as tilde is not displayable and the degree symbol not in ASCII range
   * `()` are the same brackets as `[]`
-  * Supported special chars ``/\[]"'´`_-!?^,.@°``
+  * Supported special chars `` /\|[]"'´`_-!?^,.@°``
   * Not displayable characters are displayed as three horizontal bars `≡`.
+  * `k` looks a bit wierd (better to display as `H`?)
   
 Tip: easily dim your segments using the OE-Pin of the registers and setting up an `analogWrite()`. Note that 1024 will be off and 0 will be on. Otherwise just connect the OE-Pin to GND and MR to VCC. You can chain as many registers you like by connecting `Q7S` to `DS` of the next register; just call the `shift()`-command as often as many registers you have connected.
