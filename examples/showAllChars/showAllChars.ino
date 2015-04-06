@@ -16,6 +16,8 @@
  * Data:  D6
  * Clock: D7
  * Latch: D8
+ * 
+ * Default 7-Segment type: Common cathode.
  */
 Shift7Segment segment = Shift7Segment();
 
