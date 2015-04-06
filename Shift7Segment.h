@@ -16,8 +16,8 @@
 #define SegmentG 0
 #define DOT 7
 
-#define COMMON_ANODE true
-#define COMMON_CATHODE false
+#define COMMON_ANODE false
+#define COMMON_CATHODE true
 
 class Shift7Segment {
 	private:
