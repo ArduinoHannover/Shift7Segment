@@ -20,7 +20,7 @@ The default pins are data on D6, clock (SHCP) on D7 and latch (STCP) on D8. You 
 ```cpp
 Shift7Segment mySegment = Shift7Segment(commonPinType, Q0, ..., Q7, dataPin, clockPin, latchPin);
 ```
-commonPinType can be either `COMMON_CATHODE` (default) or `COMMON_ANODE`.
+commonPinType can be either `COMMON_CATHODE` (default) or `COMMON_ANODE`. If you've connected darlington arrays on common anode displays, you still have to use `COMMON_CATHODE` as the darlington array inverts the logic.
 After creating a `Shift7Segment` you can access the following functions:
 
 `mySegment.shift(uint8_t bits, [boolean order = MSBFIRST])` shift the provided bits out in the order {A, B, ... G, Dot}. Defaults to MSBFirst, but can be inverted on the fly with setting order to `LSBFIRST`.
